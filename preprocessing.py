@@ -74,9 +74,11 @@ with open('Data/preprocessing/jAER_simplest_by_hand_better-targetLocations.txt')
 
                             distance = math.sqrt(x_d ** 2.0 + y_d ** 2.0)
                             frame[x][y] = math.exp(- ((distance/1.8) ** 2.0))
-                filename = f'output/label-%04d.npy' % count
-                # if os.path.isfile(filename):
-                save(filename, frame)
+                filename = f'Data/testdir/labels/label-%04d.npy' % count
+                factor = 255
+                frame = np.multiply(frame, factor)
+                if os.path.isfile(filename):
+                    save(filename, frame)
                 count += 1
 
         line = fp.readline()
