@@ -42,7 +42,7 @@ import os
 array_frames = []
 count = 2
 
-with open('Data/preprocessing/jAER_simplest_by_hand_better_240_180-targetLocations.txt') as fp:
+with open('../Input data/jAER_outputs/jAER_180_240_try/jAER_simplest_by_hand_better_240_180-targetLocations.txt') as fp:
     # Get the first line
     line = fp.readline()
     while line:
@@ -60,8 +60,8 @@ with open('Data/preprocessing/jAER_simplest_by_hand_better_240_180-targetLocatio
                             y_d = y - y_converted
 
                             distance = math.sqrt(x_d ** 2.0 + y_d ** 2.0)
-                            frame[x][y] = math.exp(- ((distance/3) ** 2.0))
-                filename = f'Data/traindir/labels/label-%04d.npy' % count
+                            frame[x][y] = math.exp(- ((distance/1.9) ** 2.0))
+                filename = f'Data/testdir/labels/label-%04d.npy' % count
                 factor = 255
                 frame = np.multiply(frame, factor)
                 if os.path.isfile(filename):
