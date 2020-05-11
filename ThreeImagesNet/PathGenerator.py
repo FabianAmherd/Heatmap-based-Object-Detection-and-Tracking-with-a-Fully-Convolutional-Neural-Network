@@ -8,8 +8,8 @@ import os, os.path
 
     
     
-training_file_name = "training_model_test.csv"
-testing_file_name = "testing_model_test.csv"
+training_file_name = "training_model.csv"
+testing_file_name = "testing_model.csv"
 
 
 with open(training_file_name,'w') as file:
@@ -46,7 +46,7 @@ testing_images_number = len(lines) - training_images_number
 print("Total images:", len(lines), "Training images:", training_images_number,"Testing images:", testing_images_number)
 
 #shuffle the images
-random.shuffle(lines)
+# random.shuffle(lines)
 #training images
 with open(training_file_name,'w') as training_file:
     training_file.write("img, img1, img2, label\n")

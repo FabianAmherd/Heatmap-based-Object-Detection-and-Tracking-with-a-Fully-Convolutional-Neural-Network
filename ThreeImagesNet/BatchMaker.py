@@ -4,20 +4,25 @@ import itertools
 import csv
 import sys
 from collections import defaultdict
+import av
 #np.set_printoptions(threshold=sys.maxsize)
 
 def ThreeImagesInput(path, path1, path2):
 
       
    img = cv2.imread(path, 1)
+   img = img[:,:,2]
+   print(img.shape)
    img = img.astype(np.float32)
    img = img / 255
 
    img1 = cv2.imread(path1, 1)
+   img1 = img1[:,:,2]
    img1 = img1.astype(np.float32)
    img1 = img1 / 255
 
    img2 = cv2.imread(path2, 1)
+   img2 = img1[:,:,2]
    img2 = img2.astype(np.float32)
    img2 = img2 / 255
 
