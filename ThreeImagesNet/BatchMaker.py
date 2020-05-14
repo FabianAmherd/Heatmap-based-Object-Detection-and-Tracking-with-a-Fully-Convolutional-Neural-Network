@@ -12,7 +12,6 @@ def ThreeImagesInput(path, path1, path2):
       
    img = cv2.imread(path, 1)
    img = img[:,:,2]
-   print(img.shape)
    img = img.astype(np.float32)
    img = img / 255
 
@@ -22,16 +21,17 @@ def ThreeImagesInput(path, path1, path2):
    img1 = img1 / 255
 
    img2 = cv2.imread(path2, 1)
-   img2 = img1[:,:,2]
+   img2 = img2[:,:,2]
    img2 = img2.astype(np.float32)
    img2 = img2 / 255
 
-   imgs = np.concatenate((img, img1, img2), axis=2)
+   imgs = np.dstack((img, img1, img2))
 
    return imgs
 
 def Labels(path):
    img = cv2.imread(path, 1)
+   img = img.astype(np.float32)
    img = img[:, :, 0] / 255
    return img
    
@@ -57,7 +57,3 @@ def BatchMaker(images_path, batch_size):
          Output.append(Labels(label))
 
       yield np.array(Input), np.array(Output)
-      
-
-
-
