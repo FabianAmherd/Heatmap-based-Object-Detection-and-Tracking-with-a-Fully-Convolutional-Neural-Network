@@ -24,7 +24,7 @@ gaussian_kernel_array = gaussian_kernel_array * 255/gaussian_kernel_array[int(le
 gaussian_kernel_array = gaussian_kernel_array.astype(int)
 
 
-with open('Data/preprocessing/jAER_simplest_by_hand_better_240_180-targetLocations.txt') as fp:
+with open('jAER_simplest_by_hand_better_240_180-targetLocations.txt') as fp:
     # Get the first line
     line = fp.readline()
     while line:
@@ -52,7 +52,10 @@ with open('Data/preprocessing/jAER_simplest_by_hand_better_240_180-targetLocatio
                                 if temp > 0:
                                     pix[x+j, y+i] = (temp, temp, temp)
 
+                    # heatmap = heatmap / np.sum(heatmap)
+                    # print(np.sum(heatmap))
+                    # heatmap = Image.fromarray(heatmap.astype(np.uint8))
+
                     FileName = f'label-%04d' % count
-                    if os.path.isfile(FileName):
-                        heatmap.save("Data/traindir/labels/" + FileName + ".png", "PNG")
+                    heatmap.save("../Data/labels/" + FileName + ".png", "PNG")
                     count += 1

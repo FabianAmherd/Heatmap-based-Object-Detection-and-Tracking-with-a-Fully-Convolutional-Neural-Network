@@ -11,13 +11,13 @@ with open(training_file_name, 'w') as file:
    images_path = "Data/frames/"
    labels_path = "Data/labels/"
 
-   images = glob.glob(images_path + "*.jpg")
+   images = glob.glob(images_path + "*.png")
    images.sort()
    labels = glob.glob(labels_path + "*.png")
    labels.sort()
 
    # check if label counts equals to image counts
-   assert len(images) == len(labels)
+   assert len(images) == len(labels) + 2
    for im, seg in zip(images, labels):
       count = 0
       if count >= 2:
