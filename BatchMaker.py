@@ -50,14 +50,44 @@ def BatchMaker(images_path):
 
    zipped = itertools.cycle(zip(columns[0], columns[1], columns[2], columns[3]))
 
-   
-      
-   Input = []
-   Output = []
-   for _ in range(count):
-      path, path1, path2, label = zipped.__next__()
-      Input.append(ThreeImagesInput(path, path1, path2))
-      Output.append(Labels(label))
+   Training_Input = []
+   Training_Output = []
+   Validation_Input = []
+   Validation_Output = []
 
-   return np.array(Input), np.array(Output)
+   with open('Preprocessing/jAER_simplest_by_hand_better_240_180-targetLocations.txt') as fp:
+      line = fp.readline()
+      line = fp.readline()
+      line = fp.readline()
+      line = fp.readline()
+      line = fp.readline()
+      line = fp.readline()
+      line = fp.readline()
+      line = fp.readline()
+      line = fp.readline()
+      line = fp.readline()
+      line = fp.readline()
+      line = fp.readline()
+      line = fp.readline()
+      line = fp.readline()
+
+      for _ in range(count):
+         path, path1, path2, label = zipped.__next__()
+         Img = Labels(label)
+         
    
+
+         line = fp.readline()
+         wholeLine = line.strip()
+         data = wholeLine.split()
+         x_coordinate = int(int(data[3]))
+         y_coordinate = 180 - int(int(data[4]))
+
+         if y_coordinate > 90 and x_coordinate > 120:
+            Validation_Input.append(ThreeImagesInput(path, path1, path2))
+            Validation_Output.append(Labels(label))
+         else:
+            Training_Input.append(ThreeImagesInput(path, path1, path2))
+            Training_Output.append(Labels(label))
+
+      return np.array(Training_Input), np.array(Training_Output), np.array(Validation_Input), np.array(Validation_Output)

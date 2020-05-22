@@ -2,8 +2,7 @@ import glob
 import random
 
 
-training_file_name = "training.csv"
-testing_file_name = "testing.csv"
+training_file_name = "data.csv"
 
 
 with open(training_file_name, 'w') as file:
@@ -33,31 +32,15 @@ file.close()
 
 lines = open(training_file_name).read().splitlines()
 
-# 70% for training, 30% for testing
-training_images_number = int(len(lines)*0.7)
-testing_images_number = len(lines) - training_images_number
-print("Total images:", len(lines), "Training images:", training_images_number, "Testing images:", testing_images_number)
-
-# shuffle the images
-random.shuffle(lines)
 
 # training images
 with open(training_file_name, 'w') as training_file:
     training_file.write("img, img1, img2, label\n")
-    # testing images
-    with open(testing_file_name, 'w') as testing_file:
-        testing_file.write("img, img1, img2, label\n")
-        
-        # write img, img1, img2, label to csv file
-        for i in range(0, len(lines)):
-            if lines[i] != "":
-                if training_images_number > 0:
-                    training_file.write(lines[i] + "\n")
-                    training_images_number -= 1
-                else:
-                    testing_file.write(lines[i] + "\n")
+    for i in range(0, len(lines)):
+        if lines[i] != "":
+            training_file.write(lines[i] + "\n")
+                    
                     
 training_file.close()
-testing_file.close()
     
 
