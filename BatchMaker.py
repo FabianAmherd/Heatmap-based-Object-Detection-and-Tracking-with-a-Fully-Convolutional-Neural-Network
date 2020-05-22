@@ -71,6 +71,8 @@ def BatchMaker(images_path):
       line = fp.readline()
       line = fp.readline()
 
+      training = 0
+      validation = 0
       for _ in range(count):
          path, path1, path2, label = zipped.__next__()
          Img = Labels(label)
@@ -86,8 +88,12 @@ def BatchMaker(images_path):
          if y_coordinate > 90 and x_coordinate > 120:
             Validation_Input.append(ThreeImagesInput(path, path1, path2))
             Validation_Output.append(Labels(label))
+            validation += 1
+
          else:
             Training_Input.append(ThreeImagesInput(path, path1, path2))
             Training_Output.append(Labels(label))
+            training += 1
 
+      print(f"number of training frames: {training}, number of validation frames: {validation}")
       return np.array(Training_Input), np.array(Training_Output), np.array(Validation_Input), np.array(Validation_Output)
