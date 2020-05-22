@@ -2,21 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9480831c-dfb4-419c-8ee0-461d2d666c76" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/CNN_ER_FA-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/CNN_ER_FA-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BatchMaker.py" beforeDir="false" afterPath="$PROJECT_DIR$/BatchMaker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CNN_ER_FA.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/CNN_ER_FA.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PathGenerator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Preprocessing/LabelGenerator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Preprocessing/jAER_simplest_by_hand_better_240_180-targetLocations.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/training.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1cGTZlotdf6JEHpL2czlFm7u1gq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Preprocessing/LabelGenerator.py" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Data/outputmovie" />
   </component>
   <component name="RunManager" selected="Python.LabelGenerator">
     <configuration name="FrameGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -116,6 +123,13 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9480831c-dfb4-419c-8ee0-461d2d666c76" name="Default Changelist" comment="" />
+      <created>1590153987913</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590153987913</updated>
+    </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
@@ -123,10 +137,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1589979956075" />
-    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1589980955924">
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1590154209486">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1589980955924" />
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1590154209486" />
     <state width="1345" height="162" key="GridCell.Tab.0.bottom" timestamp="1589982522062">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

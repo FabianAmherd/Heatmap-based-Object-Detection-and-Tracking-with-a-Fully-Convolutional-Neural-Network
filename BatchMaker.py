@@ -77,8 +77,6 @@ def BatchMaker(images_path):
          path, path1, path2, label = zipped.__next__()
          Img = Labels(label)
          
-   
-
          line = fp.readline()
          wholeLine = line.strip()
          data = wholeLine.split()
