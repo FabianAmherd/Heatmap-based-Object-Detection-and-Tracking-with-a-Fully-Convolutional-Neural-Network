@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9480831c-dfb4-419c-8ee0-461d2d666c76" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BatchMaker.py" beforeDir="false" afterPath="$PROJECT_DIR$/BatchMaker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CNN_ER_FA.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/CNN_ER_FA.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +22,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Data/outputmovie" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Preprocessing/LabelGenerator.py" />
   </component>
   <component name="RunManager" selected="Python.LabelGenerator">
     <configuration name="FrameGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -137,9 +136,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1589979956075" />
-    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1590154209486">
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1590661820717">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1600.900@0.0.1366.768" timestamp="1590661820717" />
     <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1590154209486" />
     <state width="1345" height="162" key="GridCell.Tab.0.bottom" timestamp="1589982522062">
       <screen x="0" y="0" width="1366" height="768" />
