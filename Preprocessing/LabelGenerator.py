@@ -5,7 +5,7 @@ from PIL import Image
 import numpy as np
 import os
 
-count = 2  # How many frames of the .avi file from jAER do not have been labelled at the start of the video?
+count = 0  # How many frames of the .avi file from jAER do not have been labelled at the start of the video?
 size = 10  # has to be large enough to render the whole blob, can create high-contrast  edges
 variance = 10  # changes the size of the blob
 label_width = 240  # label resolution
@@ -23,8 +23,9 @@ gaussian_kernel_array = gaussian_kernel(variance)
 gaussian_kernel_array = gaussian_kernel_array * 255/gaussian_kernel_array[int(len(gaussian_kernel_array)/2)][int(len(gaussian_kernel_array)/2)]
 gaussian_kernel_array = gaussian_kernel_array.astype(int)
 
+test = 0
 
-with open('jAER_simplest_by_hand_better_240_180-targetLocations.txt') as fp:
+with open('locations.txt') as fp:
     # Get the first line
     line = fp.readline()
     while line:
@@ -33,10 +34,12 @@ with open('jAER_simplest_by_hand_better_240_180-targetLocations.txt') as fp:
         if '#' != wholeLine[0]:
             
             data = wholeLine.split()
-            x = int(int(data[3]))
-            y = label_height - int(int(data[4]))
+            x = round(float(data[1]))
+            y = round(float(data[2]))
+            if int(data[0]) - 1 != int(test):
+                print("error")
 
-            if data[3] != '-1' and data[4] != '-1':
+            if data[1] != '-1' and data[2] != '-1':
                 if (x >= 0) and (y >= 0):
 
                     heatmap = Image.new("RGB", (label_width, label_height))
@@ -57,5 +60,9 @@ with open('jAER_simplest_by_hand_better_240_180-targetLocations.txt') as fp:
                     # heatmap = Image.fromarray(heatmap.astype(np.uint8))
 
                     FileName = f'label-%04d' % count
-                    heatmap.save("../Data/labels/" + FileName + ".png", "PNG")
+                    heatmap.save("labels/" + FileName + ".png", "PNG")
                     count += 1
+
+        test = data[0]
+
+print(f'Number of Labels created: {count + 1}')

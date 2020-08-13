@@ -28,7 +28,9 @@ def ThreeImagesInput(path, path1, path2):
 
    imgs = np.dstack((img, img1, img2))
 
-   return img
+   imgs = imgs.transpose(2, 0, 1)
+
+   return imgs
 
 def Labels(path):
    img = cv2.imread(path, 1)
@@ -55,21 +57,7 @@ def BatchMaker(images_path):
    Validation_Input = []
    Validation_Output = []
 
-   with open('Preprocessing/jAER_simplest_by_hand_better_240_180-targetLocations.txt') as fp:
-      line = fp.readline()
-      line = fp.readline()
-      line = fp.readline()
-      line = fp.readline()
-      line = fp.readline()
-      line = fp.readline()
-      line = fp.readline()
-      line = fp.readline()
-      line = fp.readline()
-      line = fp.readline()
-      line = fp.readline()
-      line = fp.readline()
-      line = fp.readline()
-      line = fp.readline()
+   with open('Data/Dataset036/locations.txt') as fp:
 
       training = 0
       validation = 0
@@ -80,8 +68,9 @@ def BatchMaker(images_path):
          line = fp.readline()
          wholeLine = line.strip()
          data = wholeLine.split()
-         x_coordinate = int(int(data[3]))
-         y_coordinate = 180 - int(int(data[4]))
+
+         x_coordinate = round(float(data[1]))
+         y_coordinate = round(float(data[2]))
 
          if y_coordinate > 90 and x_coordinate > 120:
             Validation_Input.append(ThreeImagesInput(path, path1, path2))

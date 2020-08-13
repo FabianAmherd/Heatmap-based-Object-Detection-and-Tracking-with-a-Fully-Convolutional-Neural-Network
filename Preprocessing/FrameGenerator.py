@@ -3,7 +3,7 @@ import cv2
 from PIL import Image
 import numpy as np
 
-container = av.open('jAER_simplest_by_hand_better_240_180_20052020.avi')
+container = av.open('homerecord.avi')
 for frame in container.decode(video=0):
     img = frame.to_image()
 
@@ -16,4 +16,4 @@ for frame in container.decode(video=0):
 
     img = np.concatenate((aps_frame, dvs_frame, zero_blue), axis=2)
     img = Image.fromarray(img.astype(np.uint8))
-    img.save('../frames/frame-%04d.png' % frame.index)
+    img.save('frames/frame-%04d.png' % frame.index)
