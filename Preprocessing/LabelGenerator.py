@@ -59,8 +59,7 @@ with open('locations.txt') as fp:
                     # print(np.sum(heatmap))
                     # heatmap = Image.fromarray(heatmap.astype(np.uint8))
 
-                    FileName = f'label-%04d' % count
-                    heatmap.save("labels/" + FileName + ".png", "PNG")
+                    heatmap.save('labels/label-%05d.png' % count, "PNG")
                     count += 1
 
         test = data[0]

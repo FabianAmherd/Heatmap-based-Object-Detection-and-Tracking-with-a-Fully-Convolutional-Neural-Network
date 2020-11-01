@@ -57,30 +57,29 @@ def BatchMaker(images_path):
    Validation_Input = []
    Validation_Output = []
 
-   with open('Data/Dataset036/locations.txt') as fp:
 
-      training = 0
-      validation = 0
-      for _ in range(count):
-         path, path1, path2, label = zipped.__next__()
-         Img = Labels(label)
-         
-         line = fp.readline()
-         wholeLine = line.strip()
-         data = wholeLine.split()
 
-         x_coordinate = round(float(data[1]))
-         y_coordinate = round(float(data[2]))
 
-         if y_coordinate > 90 and x_coordinate > 120:
-            Validation_Input.append(ThreeImagesInput(path, path1, path2))
-            Validation_Output.append(Labels(label))
-            validation += 1
+   training = 0
+   validation = 0
+   for _ in range(count):
+      path, path1, path2, label = zipped.__next__()
+      Img = Labels(label)
+      
+      target0 = np.amax(Img)
+      center_output = np.where(Img==target0)
+      x1 = center_output[1][0]
+      y1 = center_output[0][0]
 
-         else:
-            Training_Input.append(ThreeImagesInput(path, path1, path2))
-            Training_Output.append(Labels(label))
-            training += 1
+      if x1 > 90 and y1 > 120:
+         Validation_Input.append(ThreeImagesInput(path, path1, path2))
+         Validation_Output.append(Labels(label))
+         validation += 1
 
-      print(f"number of training frames: {training}, number of validation frames: {validation}")
-      return np.array(Training_Input), np.array(Training_Output), np.array(Validation_Input), np.array(Validation_Output)
+      else:
+         Training_Input.append(ThreeImagesInput(path, path1, path2))
+         Training_Output.append(Labels(label))
+         training += 1
+
+   print(f"number of training frames: {training}, number of validation frames: {validation}")
+   return np.array(Training_Input), np.array(Training_Output), np.array(Validation_Input), np.array(Validation_Output)
